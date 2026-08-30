@@ -1,0 +1,27 @@
+services:
+  redis:
+    image: redis
+    container_name: redis_cache
+    volumes:
+      - ./redis.conf:/data/redis.conf
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "/data/redis.conf"]
+    networks:
+      - backend_net
+
+  app:
+    build: .
+    container_name: verve
+    depends_on:
+      - redis
+    networks:
+      - backend_net
+    ports:
+      - 5000:5000
+    env_file:
+      - ./config.env
+
+networks:
+  backend_net:
+    driver: bridge
