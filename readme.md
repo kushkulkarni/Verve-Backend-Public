@@ -1,3 +1,3 @@
-# Verve
+# Verve-Backend-Public
 
-Built using Complete MERN stack. Has implementations like sockets, mongoose transactions, jobs controlled using bullMQ, redis caching and containerization.
+This is a cloned repo for my actual verve repo which is private. You can have a little peek of how the code is done by me. This repo is made for temporary showcase purpose.
